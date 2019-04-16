@@ -1,0 +1,44 @@
+input {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    padding: 1.3em .5em;
+    width: 96%;
+    background: #000820;
+    border-radius: 30px;
+    border: 0;
+    color: white;
+}
+
+textarea::placeholder {
+  color: whitesmoke;
+}
+
+
+#post-msg {
+  position: fixed;
+  bottom: 0;
+  
+}
+
+#msg-input {
+  height:45px;
+  resize: none;
+}
+
+
+.form-control::focus {
+  background: #000820;
+  border: none;
+}
+
+.custom-control {
+  padding-left: .5em;
+}
+
+.light-blue {
+  background: #4c5c8c;
+  color: white;
+  border: none;
+}
