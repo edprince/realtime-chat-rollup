@@ -2,7 +2,7 @@ import React, { Component } from  'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Board from "./Board";
 import Input from "./Input";
-import factorial from "factorial";
+import factorial from "../common/factorial";
 import './App.css';
 
 console.log(factorial(1000));

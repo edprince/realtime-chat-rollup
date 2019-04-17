@@ -4,8 +4,6 @@ import io from 'socket.io-client';
 import $ from 'jquery';
 import './Board.css';
 
-
-
 class Board extends Component {
   constructor(props) {
     super(props);
