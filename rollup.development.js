@@ -1,38 +1,43 @@
 import babel from 'rollup-plugin-babel';
-import nodeResolve from 'rollup-plugin-node-resolve';
-import progress from 'rollup-plugin-progress';
+import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import json from 'rollup-plugin-json';
 import replace from 'rollup-plugin-replace';
 import css from 'rollup-plugin-css-porter';
-import liveServer from 'rollup-plugin-live-server';
+import server from 'rollup-plugin-live-server';
+
+// This config will allow you to work on the app and optimize for development
+// experience. It will not produce optimized bundles, so don't use it for
+// benchmarking!
+
+let framework = process.env.framework || "react";
 
 export default {
-  input: 'src/index.js',
+  input: `src/${framework}/index.js`,
   output: {
-    file: 'build/js/bundle.min.js',
+    file: 'build/js/bundle.js',
     format: 'iife',
     sourceMap: 'inline'
   },
   plugins: [
-    liveServer({
+    server({
       port: 5000,
-      host: "0.0.0.0",
-      root: "./build",
-      file: "index.html",
+      host: '0.0.0.0',
+      root: './build',
+      file: 'index.html',
       open: false,
       wait: 500
     }),
-    nodeResolve({
-      browser: true,
+
+    resolve({ browser: true }),
+
+    babel({
+      exclude: 'node_modules/**',
     }),
-    babel({ 
-        exclude: 'node_modules/**',
-        presets: ['@babel/env', '@babel/preset-react']
-    }),
+
     replace({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
+
     commonjs({
       include: [
         'node_modules/**',
@@ -45,8 +50,9 @@ export default {
         'node_modules/react-dom/index.js': ['render'],
       }
     }),
+
     css({
-      dest: 'build/bundle.min.css'
+      dest: 'build/css/bundle.css'
     })
   ]
 }

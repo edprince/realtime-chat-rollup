@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
+import '../common/Board.css';
+import { Component } from 'inferno';
 import Message from './Message';
 import io from 'socket.io-client';
 import $ from 'jquery';
-import './Board.css';
-
-
 
 class Board extends Component {
   constructor(props) {

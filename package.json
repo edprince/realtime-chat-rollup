@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c"
+    "clean": "rm -rf build/js build/css",
+    "prebuild": "npm run clean",
+    "prestart": "npm run clean",
+    "build": "rollup -c rollup.production.js",
+    "start": "rollup -c rollup.development.js --watch",
+    "serve": "cd build && python -m SimpleHTTPServer 8081"
   },
   "repository": {
     "type": "git",
@@ -14,27 +18,34 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@babel/preset-react": "^7.0.0",
     "bootstrap": "^4.3.1",
     "faker": "^4.1.0",
+    "hyperapp": "^1.2.9",
+    "inferno": "^7.1.11",
     "jquery": "^3.4.0",
     "moment": "^2.24.0",
     "momentjs": "^2.0.0",
+    "preact": "^8.4.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-commonjs": "^9.3.4",
-    "rollup-plugin-filesize": "^6.0.1",
-    "rollup-plugin-json": "^4.0.0",
-    "rollup-plugin-node-resolve": "^4.2.3",
-    "rollup-plugin-progress": "^1.1.1",
     "socket.io-client": "^2.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-plugin-inferno": "^6.0.5",
+    "rollup": "^1.10.0",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-css-porter": "^1.0.2",
+    "rollup-plugin-filesize": "^6.0.1",
+    "rollup-plugin-html-entry": "^0.2.0",
+    "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-live-server": "^1.0.3",
-    "rollup-plugin-replace": "^2.2.0"
+    "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup-plugin-progress": "^1.1.1",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-uglify": "^6.0.2"
   }
 }

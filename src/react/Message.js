@@ -1,7 +1,7 @@
+import '../common/Message.css';
 import React, { Component } from 'react';
 import moment from 'moment';
 import faker from 'faker';
-import './Message.css';
 
 let avatar = faker.internet.avatar();
 
@@ -17,7 +17,6 @@ class Message extends Component {
           <span className="subtext">{this.props.msg.sender}</span>
           <span className="date">{moment.unix(this.props.msg.date).format('MMM Do HH:mm')}</span>
             <p className="message-body">{this.props.msg.msg}</p>
-            
           </div>
         </div>
       </div>

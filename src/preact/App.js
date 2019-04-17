@@ -1,9 +1,9 @@
-import React, { Component } from  'react';
+import '../common/App.css';
+import { h, Component } from  'preact';
 import 'bootstrap/dist/css/bootstrap.css';
 import Board from "./Board";
 import Input from "./Input";
-import factorial from "factorial";
-import './App.css';
+import factorial from "../common/factorial";
 
 console.log(factorial(1000));
 
