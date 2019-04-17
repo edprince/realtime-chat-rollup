@@ -21,8 +21,7 @@ export default {
     resolve({ browser: true }),
 
     babel({
-      presets: ['@babel/env', '@babel/preset-react'],
-      exclude: 'node_modules/**'
+      exclude: 'node_modules/**',
     }),
 
     replace({
