@@ -3,9 +3,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Component } from "inferno";
 import Board from "./Board";
 import Input from "./Input";
-import factorial from "../common/factorial";
+import * as utils from "../common/utils";
 
-console.log(factorial(1000));
+// Simulate heavy work
+console.log(utils.factorial(1000));
 
 class App extends Component {
   render() {

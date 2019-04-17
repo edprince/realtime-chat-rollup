@@ -1,7 +1,7 @@
 import '../common/Board.css';
 import { Component } from 'inferno';
 import Message from './Message';
-import io from 'socket.io-client';
+import socket from '../common/socket';
 import $ from 'jquery';
 
 class Board extends Component {
@@ -10,7 +10,6 @@ class Board extends Component {
     this.state = {
       messages: []
     }
-    const socket = io('192.168.1.110:8000/');
     socket.on('message-from-server', msg => {
       this.setState({messages: [...this.state.messages, msg]})
     });
