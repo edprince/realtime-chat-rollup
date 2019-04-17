@@ -1,9 +1,6 @@
 import '../common/Message.css';
 import { Component } from 'inferno';
-import moment from 'moment';
-import faker from 'faker';
-
-let avatar = faker.internet.avatar();
+import * as utils from "../common/utils";
 
 class Message extends Component {
   render() {
@@ -15,7 +12,7 @@ class Message extends Component {
           </div>
           <div className="col-10">
           <span className="subtext">{this.props.msg.sender}</span>
-          <span className="date">{moment.unix(this.props.msg.date).format('MMM Do HH:mm')}</span>
+          <span className="date">{utils.formatDate(this.props.msg.date)}</span>
             <p className="message-body">{this.props.msg.msg}</p>
           </div>
         </div>
