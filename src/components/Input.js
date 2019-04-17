@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import io from 'socket.io-client';
 import faker from 'faker';
 import './Input.css';
-const socket = io('192.168.1.64:8000/');
+const socket = io('192.168.1.110:8000/');
 
 class Input extends Component {
   render() {

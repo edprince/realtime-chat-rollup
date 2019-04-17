@@ -46,6 +46,7 @@ h1 {
 }
 
 
+
 input {
     position: fixed;
     bottom: 5px;
@@ -90,7 +91,6 @@ textarea::placeholder {
   color: white;
   border: none;
 }
-
 
 .subtext {
     color: white;

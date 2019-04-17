@@ -16,7 +16,7 @@ export default {
   },
   plugins: [
     liveServer({
-      port: 8001,
+      port: 5000,
       host: "0.0.0.0",
       root: "./build",
       file: "index.html",

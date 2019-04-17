@@ -12,7 +12,7 @@ class Board extends Component {
     this.state = {
       messages: []
     }
-    const socket = io('192.168.1.64:8000/');
+    const socket = io('192.168.1.110:8000/');
     socket.on('message-from-server', msg => {
       this.setState({messages: [...this.state.messages, msg]})
     });
