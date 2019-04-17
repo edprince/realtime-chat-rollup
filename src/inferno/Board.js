@@ -16,6 +16,7 @@ class Board extends Component {
   }
 
   componentDidMount() {
+    // TODO: Can be optimized by removing jQuery and using a css animation
     $('#board').hide();
     $('#board').slideDown();
   }
