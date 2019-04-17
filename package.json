@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "rm -rf build/js build/css",
+    "prebuild": "npm run clean",
+    "prestart": "npm run clean",
     "build": "rollup -c rollup.production.js",
-    "start": "rollup -c rollup.development.js",
+    "start": "rollup -c rollup.development.js --watch",
     "serve": "cd build && python -m SimpleHTTPServer 8081"
   },
   "repository": {
